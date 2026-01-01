@@ -5,6 +5,8 @@ on:
 
 jobs:
   stale:
+    # Only run this workflow on the main repository (continuedev/continue)
+    if: github.repository == 'continuedev/continue'
     permissions:
       issues: write
       pull-requests: write

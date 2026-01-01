@@ -6,7 +6,8 @@ on:
 
 jobs:
   label-pr:
-    if: github.event.pull_request.merged == true
+    # Only run this workflow on the main repository (continuedev/continue)
+    if: github.event.pull_request.merged == true && github.repository == 'continuedev/continue'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write

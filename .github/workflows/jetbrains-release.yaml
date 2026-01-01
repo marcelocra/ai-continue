@@ -33,6 +33,8 @@ concurrency:
 jobs:
   check_release_name:
     runs-on: ubuntu-latest
+    # Only run this workflow on the main repository (continuedev/continue)
+    if: github.repository == 'continuedev/continue'
     outputs:
       should_run: ${{ steps.check.outputs.should_run }}
     steps:
