@@ -20,6 +20,8 @@ jobs:
   create-prerelease:
     name: Create VSCode Pre-release
     runs-on: ubuntu-latest
+    # Only run this workflow on the main repository (continuedev/continue)
+    if: github.repository == 'continuedev/continue'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6

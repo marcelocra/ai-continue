@@ -7,6 +7,8 @@ on:
 jobs:
   auto-assign:
     runs-on: ubuntu-latest
+    # Only run this workflow on the main repository (continuedev/continue)
+    if: github.repository == 'continuedev/continue'
     permissions:
       issues: write
     steps:

@@ -12,6 +12,8 @@ permissions:
 jobs:
   stale_branches:
     runs-on: ubuntu-latest
+    # Only run this workflow on the main repository (continuedev/continue)
+    if: github.repository == 'continuedev/continue'
     steps:
       - name: Stale Branches
         uses: crs-k/stale-branches@v8.2.2
